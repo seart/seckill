@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - seckill@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="seckill">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="austoj"/>
+    <schema id="3" name="db_blog"/>
+    <schema id="4" name="db_equipment"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="jkdb"/>
+    <schema id="7" name="mysql"/>
+    <schema id="8" name="performance_schema"/>
+    <schema id="9" name="sys"/>
+    <schema id="10" name="taotao"/>
+    <schema id="11" name="wenda"/>
+    <table id="12" parent="1" name="seckill"/>
+    <table id="13" parent="1" name="success_killed"/>
+    <column id="14" parent="12" name="seckill_id">
+      <comment>商品id</comment>
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="15" parent="12" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(120)|0</data-type>
+    </column>
+    <column id="16" parent="12" name="number">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="17" parent="12" name="start_time">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="18" parent="12" name="end_time">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+    </column>
+    <column id="19" parent="12" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <index id="20" parent="12" name="idx_create_time">
+      <columns>create_time</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="21" parent="12" name="idx_end_time">
+      <columns>end_time</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="22" parent="12" name="idx_start_time">
+      <columns>start_time</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="23" parent="12" name="PRIMARY">
+      <columns>seckill_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="24" parent="13" name="seckill_id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="25" parent="13" name="user_phone">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="26" parent="13" name="state">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(4)|0</data-type>
+      <default-expression>&apos;-1&apos;</default-expression>
+    </column>
+    <column id="27" parent="13" name="create_time">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <index id="28" parent="13" name="idx_create_time">
+      <columns>create_time</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="29" parent="13" name="PRIMARY">
+      <columns>seckill_id
+user_phone</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
